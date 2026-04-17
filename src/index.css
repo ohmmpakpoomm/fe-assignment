@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: var(--border);
+  --color-background: var(--bg);
+  --color-text: var(--text);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-emergency: var(--emergency);
+  --color-overdue: var(--overdue);
+  --color-daily: var(--daily);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-muted: var(--muted);
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-ring: hsl(var(--ring));
+}
+
+@layer base {
+  :root {
+    /* Custom Design vars from design.md */
+    --bg: #0d1117;
+    --surface: #161b22;
+    --elevated: #21262d;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --success: #3fb950;
+    --warning: #d29922;
+    --danger: #f85149;
+    --emergency: #da3633;
+    --overdue: #e3b341;
+    --daily: #388bfd;
+    --radius: 8px;
+    
+    /* Shadcn UI interop mappings (HSL approximate equivalents) */
+    --background: 220 28% 7%;
+    --foreground: 210 33% 93%;
+    --card: 214 21% 11%;
+    --card-foreground: 210 33% 93%;
+    --popover: 214 21% 11%;
+    --popover-foreground: 210 33% 93%;
+    --primary: 212 100% 67%;
+    --primary-foreground: 220 28% 7%; 
+    --secondary: 213 14% 15%;
+    --secondary-foreground: 210 33% 93%;
+    --muted: 213 14% 15%;
+    --muted-foreground: 211 9% 58%;
+    --ring: 212 100% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body, html {
+    @apply bg-background text-text font-sans antialiased min-h-screen flex flex-col m-0 p-0;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--surface);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted);
+  }
+}
